@@ -22,26 +22,26 @@ pipeline {
             }
         }
         
-        stage('Terraform Plan') {
-            steps {
-                // Run terraform plan to create an execution plan
-                sh 'terraform plan -out=tfplan'
-            }
-        }
+    //     stage('Terraform Plan') {
+    //         steps {
+    //             // Run terraform plan to create an execution plan
+    //             sh 'terraform plan -out=tfplan'
+    //         }
+    //     }
         
-        stage('Terraform Apply') {
-            steps {
-                // Apply the changes described by the execution plan
-                sh 'terraform apply tfplan'
-            }
-        }
-    }
+    //     stage('Terraform Apply') {
+    //         steps {
+    //             // Apply the changes described by the execution plan
+    //             sh 'terraform apply tfplan'
+    //         }
+    //     }
+    // }
     
-    post {
-        always {
-            // Clean up
-            sh 'rm -rf .terraform'
-            sh 'rm tfplan'
-        }
-    }
+    // post {
+    //     always {
+    //         // Clean up
+    //         sh 'rm -rf .terraform'
+    //         sh 'rm tfplan'
+    //     }
+    // }
 }
