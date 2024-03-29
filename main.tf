@@ -1,16 +1,11 @@
 provider "aws" {
-    region = "us-east-1"  
+  region = "your-aws-region"
 }
 
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-
-  name = "single-instance"
-
-  instance_type          = "t2.micro"
-
+resource "aws_instance" "example" {
+  ami           = "your-ami-id"
+  instance_type = "t2.micro"
   tags = {
-    Terraform   = "true"
-    Environment = "dev"
+    Name = "ExampleInstance"
   }
 }
