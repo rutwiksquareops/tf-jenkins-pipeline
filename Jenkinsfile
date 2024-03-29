@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code repository
-                git ''
+                git 'https://github.com/rutwiksquareops/tf-jenkins-pipeline.git'
             }
         }
         
